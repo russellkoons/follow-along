@@ -33,7 +33,10 @@
     document.body.append(highlight);
 
     function highlightLink() {
-      console.log('Highlight!!');
+      const coords = this.getBoundingClientRect();
+      console.log(coords);
+      highlight.style.width = `${coords.width}px`;
+      highlight.style.height = `${coords.height}px`;
     }
 
     triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
